@@ -46,27 +46,13 @@ A `To-Do list` app that performs CRUD operations. Made with
 - .Net 8.0 from <a href="https://dotnet.microsoft.com/download/dotnet/8.0" target="_blank">`here`</a>
 - XCode 15 from <a href="https://developer.apple.com/xcode/" target="_blank">`here`</a>
 
-# Screenshots
+# Screens
 
-### Android
-<h1 float="center">
-  <img src="Media/a_daypage.png" style="height:700px; width:300" />
-  <img src="Media/a_monthpage.png" style="height:700px; width:300" />
-  <img src="Media/a_addeventpage.png" style="height:700px; width:300" />
-  <img src="Media/a_editeventpage" style="height:700px; width:300" />
-  <img src="Media/a_accountpage.png" style="height:700px; width:300" />
-  <img src="Media/a_searchpage.png" style="height:700px; width:300" />
-</h1>
+## Android
+[Android](https://github.com/bseptember/Taskinator/assets/68727050/01ab1363-c4b4-48a2-a549-93f5fb103c3a)
 
-### Windows
-<h1 float="center">
-  <img src="Media/w_daypage.png" style="height:700px; width:300" />
-  <img src="Media/w_monthpage.png" style="height:700px; width:300" />
-  <img src="Media/w_addeventpage.png" style="height:700px; width:300" />
-  <img src="Media/w_editeventpage" style="height:700px; width:300" />
-  <img src="Media/w_accountpage.png" style="height:700px; width:300" />
-  <img src="Media/w_searchpage.png" style="height:700px; width:300" />
-</h1>
+## Windows
+[Windows](https://github.com/bseptember/Taskinator/assets/68727050/66ab3cd1-9aee-4670-826b-61483efd05a3)
 
 ## Upcoming
 
