@@ -1,0 +1,43 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Taskinator.ViewModels"
+             x:Class="Taskinator.Views.SearchPageView"
+             Title="SearchPageView"
+             x:Name="searchPageView">
+
+    <VerticalStackLayout>
+        <!-- SearchBar for filtering events -->
+        <SearchBar 
+            Placeholder="Search events"
+            Text="{Binding SearchQuery, Mode=TwoWay}" 
+            SearchCommand="{Binding SearchCommand}" />
+
+        <!-- StackLayout with BindableLayout for displaying events -->
+        <StackLayout BindableLayout.ItemsSource="{Binding FilteredEvents}" Orientation="Vertical">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="{Binding Color}"
+                           Padding="10"
+                           HasShadow="True"
+                           CornerRadius="6"
+                           Margin="0,0,0,10">
+
+                        <!-- Tap gesture recognizer for the whole frame -->
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.EventTappedCommand, Source={x:Reference Name=searchPageView}}" CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" TextColor="Black" />
+                            <Label Text="{Binding Description}" FontSize="Small" TextColor="Gray" />
+                            <Label Text="{Binding Starting, StringFormat='Starts: {0:t}'}" FontSize="Small" TextColor="Black" />
+                            <Label Text="{Binding Ending, StringFormat='Ends: {0:t}'}" FontSize="Small" TextColor="Black" />
+                            <!-- Add more labels or details as needed -->
+                        </StackLayout>
+
+                    </Frame>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

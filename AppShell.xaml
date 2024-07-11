@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Taskinator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Taskinator.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    FlyoutBackgroundColor="DarkGray"
+    FlyoutWidth="200"
+    FlyoutIcon="menu.png">
+
+    <!-- Custom Flyout Item Template -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10" ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}" HeightRequest="40" WidthRequest="40" Grid.Column="0" />
+                <Label Text="{Binding Title}" FontSize="16" VerticalOptions="Center" Grid.Column="1" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <!-- Define Flyout Items -->
+    <FlyoutItem Title="Day" Icon="day.png">
+        <ShellContent ContentTemplate="{DataTemplate local:DayPageView}" Route="DayPageView" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Month" Icon="month.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MonthPageView}" Route="MonthPageView" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Year" Icon="year.png">
+        <ShellContent ContentTemplate="{DataTemplate local:YearPageView}" Route="YearPageView" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Account" Icon="account.png">
+        <ShellContent ContentTemplate="{DataTemplate local:AccountPageView}" Route="AccountPageView" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings" Icon="settings.png">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPageView}" Route="SettingsPageView" />
+    </FlyoutItem>
+
+    <!-- Additional routes for navigation -->
+    <ShellContent Route="SearchPageView" ContentTemplate="{DataTemplate local:SearchPageView}" />
+    <ShellContent Route="AddCustomEventPageView" ContentTemplate="{DataTemplate local:AddCustomEventPageView}" />
+    <ShellContent Route="EditEventPageView" ContentTemplate="{DataTemplate local:EditEventPageView}" />
+
+
+</Shell>

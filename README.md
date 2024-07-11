@@ -9,7 +9,7 @@ A `To-Do list` app that performs CRUD operations. Made with
 
 # CI/CD Status & Release
 
-[![CI Build]( )
+[![CI Build](https://github.com/bseptember/Taskinator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bseptember/Taskinator/actions/workflows/ci.yml)
 
 # Maintenance Status 🔹<a href="https://github.com/bseptember/Taskinator/issues">Report Bug</a> &nbsp; &nbsp;
 

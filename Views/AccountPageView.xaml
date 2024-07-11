@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Taskinator.ViewModels"
+             x:Class="Taskinator.Views.AccountPageView">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="{Binding HelloText}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Image
+                Source="planner.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to the Taskinator"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to the Taskinator"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding ErrorText}"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Login"
+                Command="{Binding LoginCommand}"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsLoginVisible}" />
+
+            <Button
+                Text="Logout"
+                Command="{Binding LogoutCommand}"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsLogoutVisible}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

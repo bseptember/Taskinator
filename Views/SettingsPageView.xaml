@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Taskinator.Views.SettingsPageView"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="SettingsPageView">
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Lottie Animation -->
+        <skia:SKLottieView Grid.Row="1"
+                           x:Name="LottieView"
+                           Source="loading.json"
+                           RepeatCount="-1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="0,100,0,0" />
+        
+        <!-- Clear Cache Button -->
+        <StackLayout Grid.Row="0" Spacing="15" HorizontalOptions="Center" Margin="0,20,0,20">
+            <Button Text="Clear Cache"
+                    Command="{Binding ClearCacheCommand}"
+                    HorizontalOptions="Center" />
+            <Label Text="Clear local events created when the app opened."
+                   HorizontalOptions="Center" />
+        </StackLayout>
+
+        <!-- Delete Database Button -->
+        <StackLayout Grid.Row="2" Spacing="15" HorizontalOptions="Center" Margin="0,20,0,20">
+            <Button Text="Delete Database"
+                    Command="{Binding DeleteDatabaseCommand}"
+                    HorizontalOptions="Center" />
+            <Label Text="Delete all events on app ever stored on device."
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

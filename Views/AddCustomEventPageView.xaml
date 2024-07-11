@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Taskinator.Views.AddCustomEventPageView"
+             Title="Add Custom Event"
+             xmlns:viewmodels="clr-namespace:Taskinator.ViewModels;assembly=Taskinator">
+
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Event Name -->
+            <Entry Grid.Row="0" Placeholder="Event Name" x:Name="EventNameEntry" Text="{Binding EventName}" />
+
+            <!-- Event Description -->
+            <Editor Grid.Row="1" Placeholder="Event Description" x:Name="EventDescriptionEditor" HeightRequest="80" Text="{Binding EventDescription}" />
+
+            <!-- Start Date and Time -->
+            <Label Grid.Row="2" Grid.Column="0" Text="Start Date:" FontSize="16" Margin="0,20,0,5" HorizontalOptions="Start" />
+            <Label Grid.Row="2" Grid.Column="1" Text="Start Time:" FontSize="16" Margin="0,20,0,5" HorizontalOptions="End" />
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <DatePicker Grid.Column="0" Date="{Binding EventStartDateTime.Date, Mode=TwoWay}" HorizontalOptions="Start" />
+                <TimePicker Grid.Column="1" Format="hh:mm tt" Time="{Binding EventStartTime, Mode=TwoWay}" HorizontalOptions="End" />
+            </Grid>
+
+            <!-- End Date and Time -->
+            <Label Grid.Row="4" Grid.Column="0" Text="End Date:" FontSize="16" Margin="0,20,0,5" HorizontalOptions="Start" />
+            <Label Grid.Row="4" Grid.Column="1" Text="End Time:" FontSize="16" Margin="0,20,0,5" HorizontalOptions="End" />
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <DatePicker Grid.Column="0" Date="{Binding EventEndDateTime.Date, Mode=TwoWay}" HorizontalOptions="Start" />
+                <TimePicker Grid.Column="1" Format="hh:mm tt" Time="{Binding EventEndTime, Mode=TwoWay}" HorizontalOptions="End" />
+            </Grid>
+
+            <!-- Select Priority -->
+            <Label Grid.Row="6" Text="Select Priority:" FontSize="16" Margin="0,20,0,5" />
+            <Picker Grid.Row="7" x:Name="PriorityPicker" SelectedItem="{Binding EventPriority}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>0</x:Int32>
+                        <x:Int32>1</x:Int32>
+                        <x:Int32>2</x:Int32>
+                        <x:Int32>3</x:Int32>
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>5</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>7</x:Int32>
+                        <x:Int32>8</x:Int32>
+                        <x:Int32>9</x:Int32>
+                        <x:Int32>10</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Button to Add Event -->
+            <Button Grid.Row="8" Text="Add Event" Command="{Binding AddEventCommand}"  Margin="0,20,0,5" />
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

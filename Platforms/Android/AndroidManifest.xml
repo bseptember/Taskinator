@@ -1,0 +1,26 @@
+﻿<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    package="com.companyname.taskinator"
+    android:installLocation="auto">
+
+	<application
+        android:label="Taskinator"
+        android:icon="@mipmap/appicon"
+        android:roundIcon="@mipmap/appicon"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/MainTheme"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+		android:enableOnBackInvokedCallback="true"
+        android:usesCleartextTraffic="true">
+	</application>
+
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+	<uses-permission android:name="android.permission.USE_BIOMETRIC" />
+	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
+	<uses-feature android:name="android.hardware.nfc" android:required="false"/>
+</manifest>
